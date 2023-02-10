@@ -1,10 +1,10 @@
 import { useRef, useState, useEffect } from 'react';
-import useAuth from '../hooks/useAuth';
+import useAuth from '../../hooks/useAuth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import axios from '../../api/axios';
 
 import "./Login.scss";
 
-import axios from '../api/axios';
 const LOGIN_URL = '/auth';
 
 const Login = () => {
@@ -48,6 +48,7 @@ const Login = () => {
             setUser('');
             setPwd('');
             navigate(from, { replace: true });
+            
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');

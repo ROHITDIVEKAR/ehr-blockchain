@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import axios from '../api/axios';
+import axios from '../../api/axios';
 import { Link } from "react-router-dom";
 
 import "./Register.scss";
@@ -13,7 +13,7 @@ const Register = () => {
     const userRef = useRef();
     const errRef = useRef();
 
-    const [role, setRole] = useState("user");
+    const [role, setRole] = useState();
 
     const [user, setUser] = useState('');
     const [validName, setValidName] = useState(false);
@@ -57,7 +57,7 @@ const Register = () => {
         }
         try {
             const response = await axios.post(REGISTER_URL,
-                JSON.stringify({ user, pwd }),
+                JSON.stringify({ user, pwd, role }),
                 {
                     headers: { 'Content-Type': 'application/json' },
                     withCredentials: true
@@ -91,7 +91,7 @@ const Register = () => {
                 <form onSubmit={handleSubmit}>
                     <div className="role">
                         <span className="role-label">Role :</span>
-                        <select value={role} onChange={({ target }) => setRole(target.value)}>
+                        <select value={role} onChange={({ target }) => setRole(target.value === "admin" ? [1984] : target.value === 'doctor' ? [1984, 2001] : [2001])}>
                             <option className="options" value="user">User</option>
                             <option className="options" value="admin">Admin</option>
                             <option className="options" value="doctor">Doctor</option>

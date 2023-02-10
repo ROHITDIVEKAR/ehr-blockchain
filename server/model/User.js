@@ -6,13 +6,17 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    // roles: {
+    //     User: {
+    //         type: Number,
+    //         default: 2001
+    //     },
+    //     Editor: Number,
+    //     Admin: Number
+    // },
     roles: {
-        User: {
-            type: Number,
-            default: 2001
-        },
-        Editor: Number,
-        Admin: Number
+        type: Array,
+        "default": []
     },
     password: {
         type: String,
