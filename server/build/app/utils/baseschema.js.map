@@ -1,0 +1,1 @@
+{"version":3,"file":"baseschema.js","sourceRoot":"","sources":["../../../app/utils/baseschema.ts"],"names":[],"mappings":";;;AAAA,uCAAkC;AAElC,MAAa,UAAW,SAAQ,iBAAM;IAClC,YAAY,SAAc;QACtB,KAAK,iCACE,SAAS,KACZ,SAAS,EAAE;gBACP,IAAI,EAAE,OAAO;gBACb,OAAO,EAAE,KAAK;aACjB,KACF;YACC,UAAU,EAAE,IAAI;SACnB,CAAC,CAAA;IACN,CAAC;CACJ;AAZD,gCAYC"}
